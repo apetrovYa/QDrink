@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>app-icon.png</file>
+        <file>cicon.png</file>
+        <file>cocktail-color-2.jpg</file>
+        <file>cocktail-color.jpg</file>
+    </qresource>
+</RCC>
