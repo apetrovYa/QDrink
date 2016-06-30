@@ -20,8 +20,8 @@ public:
     Cocktail* find(const string& n);
     vector<Cocktail> getRicettario() const;
 
-    bool load(const std::string& = "../app/resurces/file-ricettario.xml");
-    bool save(const std::string& = "../app/resurces/file-ricettario.xml") const;
+    bool load(const std::string& = "./resurces/file-ricettario.xml");
+    bool save(const std::string& = "./resurces/file-ricettario.xml") const;
 
     ~Ricettario();
 
