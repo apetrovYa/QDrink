@@ -18,11 +18,9 @@ public:
         momentoConsumo(mc),
         drink(new Drink(*d)) {}
 
-   Cocktail(const Cocktail& c):
-       nomeCocktail(c.nomeCocktail),
-       momentoConsumo(c.momentoConsumo),
-       drink(new Drink(*(c.drink))) {}
-
+   Cocktail(const Cocktail& c): nomeCocktail(c.nomeCocktail),
+                                momentoConsumo(c.momentoConsumo),
+                                drink(new Drink(*(c.drink))){ }
    // getters
    string getNomeCocktail() const;
    string getMomentoConsumo() const;

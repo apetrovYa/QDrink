@@ -1,8 +1,6 @@
 #include "drink.h"
 
-
-Drink::Drink() { }
-
+Drink::Drink() {}
 
 vector<Ingridiente*>
 Drink::copia(const vector<Ingridiente*>& x)
@@ -35,13 +33,15 @@ double Drink::gradazioneAlcolica() const
     return ga;
 }
 
-void Drink::add(Ingridiente* i) {
+void Drink::add(Ingridiente* i)
+{
     ingridienti.push_back (i->copia ());
 }
 
 
 
-bool Drink::remove(const std::string& n) {
+bool Drink::remove(const std::string& n)
+{
 
 bool ok = false;
 
@@ -55,8 +55,10 @@ for (vector<Ingridiente*>::iterator it = ingridienti.begin(); !ok && it != ingri
 }
 
 
-Ingridiente* Drink::getChild(int i) const {
-    return ingridienti[i];
+Ingridiente* Drink::getChild(int i) const
+{
+    
+    return (static_cast<int>(ingridienti.size()) > i)? ingridienti[static_cast<unsigned long>(i)]: 0;
 }
 
 
@@ -69,14 +71,13 @@ unsigned int Drink::howManyElements() const {
 void Drink::setDrink (const Drink& d)
 {
     bool input = d.ingridienti.size () > 0;
-    bool fis = ingridienti.size () > 0;
-    if (input && fis)
+    if (input)
      ingridienti = d.ingridienti;
 }
 
 
 Drink::~Drink ()
-{
+{   if (ingridienti.size () >= 1)
     for (vector<Ingridiente*>::iterator it = ingridienti.begin (); it != ingridienti.end(); ++it )
         delete *it;
 

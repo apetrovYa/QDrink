@@ -19,9 +19,7 @@ class Drink
 
 
 public:
-
  Drink();
-
  Drink(const Drink& x):
      ingridienti(copia(x.ingridienti)) {}
 

@@ -3,6 +3,8 @@
 #include "aromatizzante.h"
 #include "colorante.h"
 
+
+
 string Cocktail::getNomeCocktail() const
 {
   return nomeCocktail;
@@ -14,7 +16,7 @@ string Cocktail::getMomentoConsumo() const
 }
 
 Drink* Cocktail::getDrink() const {
-    return new Drink(*drink);
+    return drink;
 }
 
 
