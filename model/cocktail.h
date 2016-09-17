@@ -11,16 +11,16 @@ class Cocktail
   Drink* drink;
 
 public:
-   Cocktail(string n = "NomeCocktail",
-            string mc = "MomentoConsumo",
-            Drink* d = new Drink()):
-        nomeCocktail(n),
-        momentoConsumo(mc),
-        drink(new Drink(*d)) {}
+  Cocktail(string n = "NomeCocktail",
+           string mc = "MomentoConsumo",
+           Drink* d = new Drink()):
+       nomeCocktail(n),
+       momentoConsumo(mc),
+       drink(new Drink(*d)) {}
 
-   Cocktail(const Cocktail& c): nomeCocktail(c.nomeCocktail),
-                                momentoConsumo(c.momentoConsumo),
-                                drink(new Drink(*(c.drink))){ }
+  Cocktail(const Cocktail& c): nomeCocktail(c.nomeCocktail),
+                               momentoConsumo(c.momentoConsumo),
+                               drink(new Drink(*(c.drink))){ }
    // getters
    string getNomeCocktail() const;
    string getMomentoConsumo() const;
@@ -28,11 +28,11 @@ public:
 
    // setters
 
-   void setNomeCocktail(const string& n);
-   void setMomentoConsumo(const string& mc);
-   void setDrink(const Drink& d);
-   void addIngrediente(const Ingridiente& i);
-   bool removeIngrediente(const string& nomeIngrediente);
+   void setNomeCocktail(const string& );
+   void setMomentoConsumo(const string&);
+   void setDrink(const Drink& );
+   void addIngrediente(const Ingridiente& );
+   bool removeIngrediente(const string&);
 
 };
 

@@ -5,6 +5,9 @@
 
 
 
+
+
+
 string Cocktail::getNomeCocktail() const
 {
   return nomeCocktail;
@@ -49,5 +52,5 @@ void Cocktail::addIngrediente(const Ingridiente& i)
 }
 bool Cocktail::removeIngrediente(const string& nomeIngrediente)
 {
- return (drink->howManyElements ()>0)? drink->remove (nomeIngrediente): false;
+ return (drink->howManyElements() > 0 )? drink->remove (nomeIngrediente): false;
 }

@@ -1,6 +1,8 @@
 #include "drink.h"
 
-Drink::Drink() {}
+Drink::Drink() {
+
+}
 
 vector<Ingridiente*>
 Drink::copia(const vector<Ingridiente*>& x)
@@ -77,8 +79,12 @@ void Drink::setDrink (const Drink& d)
 
 
 Drink::~Drink ()
-{   if (ingridienti.size () >= 1)
-    for (vector<Ingridiente*>::iterator it = ingridienti.begin (); it != ingridienti.end(); ++it )
-        delete *it;
+{
+    if (ingridienti.size () > 0) {
+        for (vector<Ingridiente*>::iterator it = ingridienti.begin ();
+         it != ingridienti.end();
+         ++it )
+            delete *it;
+    }
 
 }
