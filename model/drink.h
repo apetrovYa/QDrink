@@ -13,8 +13,7 @@ class Drink
 {
 
     vector<Ingridiente*> ingridienti;
-    static vector<Ingridiente*>
-    copia(const vector<Ingridiente*>& x);
+    static vector<Ingridiente*> copia(const vector<Ingridiente*>& x);
 
 
 

@@ -242,32 +242,13 @@ bool Ricettario::save(const std::string& path) const
          inp->writeStartElement ("drink");
 
          for (unsigned int i = 0; i < s; ++i) {
-             Ingridiente* ing = d->getChild ((int)i);
-             Base* base = dynamic_cast<Base*>(ing);
-             Aromatizzante* aroma = dynamic_cast<Aromatizzante*>(ing);
-             Colorante* color = dynamic_cast<Colorante*>(ing);
-
-             if (base) {
-                 inp->writeStartElement ("base");
-                 inp->writeTextElement("nome", QString::fromStdString(base->getNome ()));
-                 inp->writeTextElement("quantita", QString::number( base->volume ()));
-                 inp->writeTextElement("percentualeAlcolica", QString::number(base->getPercentualeAlcolica ()));
+                 Ingridiente* ing = d->getChild ( (int) i);
+                 std::string name = ing -> getTipo ();
+                 inp->writeStartElement (QString::fromStdString (name));
+                 inp->writeTextElement("nome", QString::fromStdString(ing->getNome ()));
+                 inp->writeTextElement("quantita", QString::number( ing->volume ()));
+                 inp->writeTextElement("percentualeAlcolica", QString::number(ing->getPercentualeAlcolica ()));
                  inp->writeEndElement ();
-             }
-             if (aroma) {
-                 inp->writeStartElement ("aromatizzante");
-                 inp->writeTextElement("nome", QString::fromStdString(aroma->getNome ()));
-                 inp->writeTextElement("quantita", QString::number( aroma->volume () ));
-                 inp->writeTextElement("percentualeAlcolica", QString::number(aroma->getPercentualeAlcolica ()));
-                 inp->writeEndElement ();
-             }
-             if (color) {
-                 inp->writeStartElement ("colorante");
-                 inp->writeTextElement("nome", QString::fromStdString(color->getNome ()));
-                 inp->writeTextElement("quantita", QString::number( color->volume ()));
-                 inp->writeTextElement("percentualeAlcolica", QString::number(color->getPercentualeAlcolica ()));
-                 inp->writeEndElement ();
-             }
 
          } // fine for
          inp->writeEndElement ();

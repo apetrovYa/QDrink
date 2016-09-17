@@ -39,7 +39,7 @@ FORMS += \
     forms/ricettariodialog.ui
 
 RESOURCES += \
-    resurces/icons.qrc
+    resources/icons.qrc
 
 
 
